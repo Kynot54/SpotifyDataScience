@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.graph_objects as go
 
 
-client_credentials_manager = SpotifyClientCredentials(client_id="9774215a1cd446eab76c481665f994bf", client_secret="b67cc6e6c6ff43a1998d79584f88b703")
+client_credentials_manager = SpotifyClientCredentials(client_id="CLIENT_ID", client_secret="CLIENT_SECRET")
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 artist_name = []
