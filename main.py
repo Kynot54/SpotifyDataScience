@@ -58,7 +58,7 @@ tf_df['duration_ms'] = pd.to_numeric(tf_df['duration_ms'])
 tf_df['instrumentalness'] = pd.to_numeric(tf_df['instrumentalness'])
 tf_df['time_signature'] = tf_df['time_signature'].astype("category")
 
-#kyle's function
+# kyle's popularity function
 by_popularity = pd.DataFrame(track_df.sort_values(by=['track_popularity'], ascending=False)[['artist_name', 'track_name']])
 print(by_popularity.head(10))
 
@@ -104,8 +104,7 @@ plt.title("Amount of Songs Per Artist in the Top 100")
 plt.barh(keys[0:10], value[0:10])
 plt.show()
 
-
-#kyle's radial graph
+# kyle's radial plot graph
 track_pop = pd.DataFrame(track_df.sort_values(by=['track_popularity'], ascending=False)[['track_popularity','track_name'
                                                                                         , 'artist_name','artist_genres',
                                                                                           'track_id']])
@@ -144,7 +143,7 @@ fig = go.Figure(
 
 fig.show()
 
-#kyle's bar graph
+# kyle's bar graph
 artist_follow = pd.DataFrame(track_df.sort_values(by=['artist_followers'], ascending=False)[['artist_name','artist_followers']])
 artist_follow.drop_duplicates(subset=['artist_name'], keep=False, inplace=True)
 artist_follow.plot(x='artist_name', y='artist_followers', kind="bar", logy='sym')
